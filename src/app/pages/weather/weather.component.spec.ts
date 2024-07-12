@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WheatherComponent } from './wheather.component';
+import { WeatherComponent } from './weather.component';
 
-describe('WheatherComponent', () => {
-  let component: WheatherComponent;
-  let fixture: ComponentFixture<WheatherComponent>;
+describe('WeatherComponent', () => {
+  let component: WeatherComponent;
+  let fixture: ComponentFixture<WeatherComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WheatherComponent]
+      imports: [WeatherComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(WheatherComponent);
+    fixture = TestBed.createComponent(WeatherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

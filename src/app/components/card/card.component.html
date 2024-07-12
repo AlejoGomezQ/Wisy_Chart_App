@@ -1,0 +1,8 @@
+@for (location of this.locations; track $index) {
+<a href="/weather/{{ location.id }}"
+    class="block my-10 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 text-center">
+
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ location.name }}</h5>
+    <p class="font-normal text-gray-700">{{ location.id }}</p>
+</a>
+}

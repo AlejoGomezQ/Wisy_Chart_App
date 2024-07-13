@@ -35,7 +35,7 @@ export class LineChartComponent implements OnInit{
           label: 'Forecasted Temperatures',
           data: this.forecastedTemperatures,
           fill: false,
-          borderColor: 'rgb(75, 192, 192)',
+          borderColor: 'rgb(147 51 234)',
           tension: 0.1
         }]
       };

@@ -60,9 +60,9 @@ export class LineChartComponent implements OnInit{
                 color: 'black'
               },
               suggestedMin: 0,
-              suggestedMax: 200,
+              suggestedMax: 150,
               ticks: {
-                count: 5,
+                count: 4,
               }
             }
           }

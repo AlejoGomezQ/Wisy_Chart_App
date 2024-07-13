@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WheatherService } from '../../services/wheather.service';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-card',
@@ -12,5 +12,5 @@ export class CardComponent {
 
   public locations = this.weatherService.locations;
 
-  constructor(private weatherService: WheatherService) {}
+  constructor(private weatherService: WeatherService) {}
 }

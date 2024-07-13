@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Location } from '../models/location.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WheatherService {
+export class WeatherService {
 
     /**
    * List of weather locations.
@@ -21,7 +23,15 @@ export class WheatherService {
       id: 'TOP',
       name: 'Kansas Forecast'
     }
-]
+  ]
 
-  constructor() { }
+  private apiUrl: string;
+
+  constructor(private http: HttpClient) { 
+    this.apiUrl = 'https://api.weather.gov/gridpoints/';
+  }
+
+  public getForecast(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}${id}/31,80/forecast`);
+  }
 }

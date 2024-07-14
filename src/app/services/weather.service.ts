@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Location } from '../models/location.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ForecastedTemperature } from '../models/weather.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class WeatherService {
     this.apiUrl = 'https://api.weather.gov/gridpoints/';
   }
 
-  public getForecast(id: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${id}/31,80/forecast`);
+  public getForecast(id: string): Observable<ForecastedTemperature> {
+    return this.http.get<ForecastedTemperature>(`${this.apiUrl}${id}/31,80/forecast`);
   }
 }

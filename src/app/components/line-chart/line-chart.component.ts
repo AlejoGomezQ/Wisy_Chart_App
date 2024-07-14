@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { ActivatedRoute } from '@angular/router';
 import { Chart, ChartType } from 'chart.js/auto';
+import { ForecastedTemperature } from '../../models/weather.model';
 
 @Component({
   selector: 'app-line-chart',
@@ -73,7 +74,7 @@ export class LineChartComponent implements OnInit{
   public getForecast(id: string): void {
     this.weatherService.getForecast(id).subscribe({
       next: forecast => {
-          forecast.properties.periods.map(({ name, temperature }: any) => {
+          forecast.properties.periods.map(({ name, temperature }: {name: string, temperature: number}) => {
             this.date.push(name);
             this.forecastedTemperatures.push(temperature);
         });
